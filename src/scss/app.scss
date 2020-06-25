@@ -1,0 +1,340 @@
+@import "variables";
+
+*{
+    outline: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box !important;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    
+}
+
+#root{
+    height: 100%;
+}
+
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebebeb;
+    color: $white;
+    height: 100%;
+    flex-direction: column;
+
+    &.light{
+        .calculator{
+            background-color: $white;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            margin-bottom: 2.5rem;
+            border: 2px solid $white;
+            border-radius: 8px;
+        }
+
+        
+        .screen{
+            display: flex;
+            background-color: $white;
+            color: $black;
+            min-height: 100px;
+            max-height: 100px;
+        }
+        
+        .total{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            flex-basis: 100%;
+            margin: .5rem .5rem;
+            font-size: 2.7rem;
+        }
+        
+        .buttons{
+            background-color: $white;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            height: 80%;
+            width: 90%;
+            margin: auto;
+            padding-bottom: 13px;
+
+            .font-big{
+                font-size: 1.5rem;
+                padding-top: 7px;
+            }
+        }
+        
+        
+        
+        .individual-button{
+            height: calc(20% - 10px);
+            width:calc(25% - 10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: #ebebeb;
+            border-radius: 55px;
+            margin: 5px;
+            color: $black;
+            font-family: "Orbitron",sans-serif;
+        }
+        
+        .zero{
+            flex-grow: 1;
+        }
+        
+        .orange{
+            background-color: $orange;
+        }
+        
+        .green{
+            background-color: $green;
+        }
+        
+        .red:active{
+            background-color: $red;
+        }
+        
+        .toggle{
+            display: flex;
+        
+            p{
+                margin-right: .5rem;
+                padding-top: .5rem;
+                margin-left: .5rem;
+                color: $black;
+                font-family: 'Orbitron', sans-serif;
+            }
+            
+        }
+        
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+          }
+          
+          .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+          
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          
+          .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          
+          input:checked + .slider {
+            background-color: #2196F3;
+          }
+          
+          input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+          }
+          
+          input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+          }
+          
+          /* Rounded sliders */
+          .slider.round {
+            border-radius: 34px;
+          }
+          
+          .slider.round:before {
+            border-radius: 50%;
+          }
+        
+        
+    }
+
+    &.dark{
+        .calculator{
+            background-color: $black;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            margin-bottom: 2.5rem;
+            border: 2px solid $black;
+            border-radius: 8px;
+        }
+        
+        .screen{
+            display: flex;
+            background-color: $black;
+            color: $white;
+            min-height: 100px;
+            max-height: 100px;
+        }
+        
+        .total{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            flex-basis: 100%;
+            margin: .5rem .5rem;
+            font-size: 2.7rem;
+        }
+        
+        .buttons{
+            background-color: $black;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            height: 80%;
+            width: 90%;
+            margin: auto;
+            padding-bottom: 13px;
+
+            .font-big{
+                font-size: 1.5rem;
+                padding-top: 7px;
+            }
+        }
+        
+        .individual-button{
+            height: calc(20% - 10px);
+            width:calc(25% - 10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: $lighterblack;
+            border-radius: 55px;
+            margin: 5px;
+            font-family: "Orbitron",sans-serif; 
+            
+        }
+        
+        .zero{
+            flex-grow: 1;
+        }
+        
+        .orange{
+            background-color: $orange;
+        }
+        
+        .green{
+            background-color: $green;
+        }
+        
+        .red:active{
+            background-color: $red;
+        }
+        
+        .toggle{
+            display: flex;
+        
+            p{
+                margin-right: .5rem;
+                padding-top: .5rem;
+                margin-left: .5rem;
+                color: $black;
+                font-family: 'Orbitron', sans-serif;
+            }
+            
+        }
+        
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+          }
+          
+          .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+          
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          
+          .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          
+          input:checked + .slider {
+            background-color: #2196F3;
+          }
+          
+          input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+          }
+          
+          input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+          }
+          
+          /* Rounded sliders */
+          .slider.round {
+            border-radius: 34px;
+          }
+          
+          .slider.round:before {
+            border-radius: 50%;
+          }
+        
+        
+    }
+}
+
